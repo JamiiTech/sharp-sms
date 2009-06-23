@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="MPS" EntityNamespace="MPSDb" ContextNamespace="MPSDb" Class="DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=MPS;Integrated Security=True" SettingsObjectName="MPS.Properties.Settings" SettingsPropertyName="MPSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Abonents" Member="Abonents">
+    <Type Name="Abonent">
+      <Column Name="MSISDN" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Settings" Member="Settings">
+    <Type Name="Setting">
+      <Column Name="[key]" Member="key" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="value" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BasketItems" Member="BasketItems">
+    <Type Name="BasketItem">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idBasket" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MSISDN" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idMe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isRetrieved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isPurchased" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="dateModified" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="datePurchased" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="hash" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idSellType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Baskets" Member="Baskets">
+    <Type Name="Basket">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="descr" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Map" Member="Maps">
+    <Type Name="Map">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idMe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="sn" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Association Name="Map_OrderMap" Member="OrderMaps" OtherKey="idMap" Type="OrderMap" />
+      <Association Name="Me_Map" Member="Me" ThisKey="idMe" Type="Me" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Me" Member="Mes">
+    <Type Name="Me">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idMeType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Me_Map" Member="Maps" OtherKey="idMe" Type="Map" />
+      <Association Name="Me_MeFile" Member="MeFiles" OtherKey="idMe" Type="MeFile" />
+      <Association Name="MeType_Me" Member="MeType" ThisKey="idMeType" Type="MeType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MeFiles" Member="MeFiles">
+    <Type Name="MeFile">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idMe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idMeFileType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="val" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Me_MeFile" Member="Me" ThisKey="idMe" Type="Me" IsForeignKey="true" />
+      <Association Name="MeFileType_MeFile" Member="MeFileType" ThisKey="idMeFileType" Type="MeFileType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MeFileTypes" Member="MeFileTypes">
+    <Type Name="MeFileType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idMeType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descr" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="suffix" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="MeFileType_MeFile" Member="MeFiles" OtherKey="idMeFileType" Type="MeFile" />
+      <Association Name="MeFileType_SellFileType" Member="SellFileTypes" OtherKey="idMeFileType" Type="SellFileType" />
+      <Association Name="MeType_MeFileType" Member="MeType" ThisKey="idMeType" Type="MeType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MeTypes" Member="MeTypes">
+    <Type Name="MeType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descr" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="MeType_Me" Member="Mes" OtherKey="idMeType" Type="Me" />
+      <Association Name="MeType_MeFileType" Member="MeFileTypes" OtherKey="idMeType" Type="MeFileType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderMap" Member="OrderMaps">
+    <Type Name="OrderMap">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idMap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="hash" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="idBasket" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Map_OrderMap" Member="Map" ThisKey="idMap" Type="Map" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SellFileTypes" Member="SellFileTypes">
+    <Type Name="SellFileType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idSellType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idMeFileType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="MeFileType_SellFileType" Member="MeFileType" ThisKey="idMeFileType" Type="MeFileType" IsForeignKey="true" />
+      <Association Name="SellType_SellFileType" Member="SellType" ThisKey="idSellType" Type="SellType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SellTypes" Member="SellTypes">
+    <Type Name="SellType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="descr" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="SellType_SellFileType" Member="SellFileTypes" OtherKey="idSellType" Type="SellFileType" />
+    </Type>
+  </Table>
+</Database>
