@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BB38379-974F-429A-BE05-0E96299262B4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CDS.UI</RootNamespace>
+    <AssemblyName>CDS.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialogs\AddMeFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddMeFiles.Designer.cs">
+      <DependentUpon>AddMeFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileInfoSmall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FileInfoSmall.Designer.cs">
+      <DependentUpon>FileInfoSmall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FileEditor.Designer.cs">
+      <DependentUpon>FileEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XML.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XML.Designer.cs">
+      <DependentUpon>XML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSMeFileTypes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMeFileTypes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSMeTypes.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DSMeTypes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MeFileInfoSmall.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Me.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Me.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MePropertiesEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MePropertiesEditor.Designer.cs">
+      <DependentUpon>MePropertiesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MeProperty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MeProperty.Designer.cs">
+      <DependentUpon>MeProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MeSS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MeSS.Designer.cs">
+      <DependentUpon>MeSS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MeSSEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MeSSEditor.Designer.cs">
+      <DependentUpon>MeSSEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewMe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewMe.Designer.cs">
+      <DependentUpon>NewMe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\AddMeFiles.resx">
+      <DependentUpon>AddMeFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileInfoSmall.resx">
+      <DependentUpon>FileInfoSmall.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileEditor.resx">
+      <DependentUpon>FileEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XML.resx">
+      <DependentUpon>XML.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MePropertiesEditor.resx">
+      <DependentUpon>MePropertiesEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MeProperty.resx">
+      <DependentUpon>MeProperty.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MeSS.resx">
+      <DependentUpon>MeSS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MeSSEditor.resx">
+      <DependentUpon>MeSSEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewMe.resx">
+      <DependentUpon>NewMe.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Publishing.resx">
+      <DependentUpon>Publishing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SystemWorks.resx">
+      <DependentUpon>SystemWorks.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SellSections.resx">
+      <DependentUpon>SellSections.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Me.xsc">
+      <DependentUpon>Me.xsd</DependentUpon>
+    </None>
+    <None Include="Me.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Me.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Me.xss">
+      <DependentUpon>Me.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Controls\Publishing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Publishing.Designer.cs">
+      <DependentUpon>Publishing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SellSections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SellSections.Designer.cs">
+      <DependentUpon>SellSections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SS.cs" />
+    <Compile Include="Dialogs\SystemWorks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SystemWorks.Designer.cs">
+      <DependentUpon>SystemWorks.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CDS\CDS.csproj">
+      <Project>{0C632B9E-AC59-406A-810F-4E3FCE0D417E}</Project>
+      <Name>CDS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Goods\Goods.csproj">
+      <Project>{C95E151E-D44D-45FA-A0EB-A80D1EEB9ED0}</Project>
+      <Name>Goods</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DSMeFileTypes.xsc">
+      <DependentUpon>DSMeFileTypes.xsd</DependentUpon>
+    </None>
+    <None Include="DSMeFileTypes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMeFileTypes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSMeFileTypes.xss">
+      <DependentUpon>DSMeFileTypes.xsd</DependentUpon>
+    </None>
+    <None Include="DSMeTypes.xsc">
+      <DependentUpon>DSMeTypes.xsd</DependentUpon>
+    </None>
+    <None Include="DSMeTypes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMeTypes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSMeTypes.xss">
+      <DependentUpon>DSMeTypes.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CDSUI.sdm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
