@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Types>
+  <Type name="java-game">4</Type>
+  <Type name="images">1</Type>
+  <Type name="image">1</Type>
+  <Type name="animation">8</Type>
+  <Type name="sound">2</Type>
+  <Type name="video">5</Type>
+  <Type name="theme">6</Type>
+  <Type name="symbian-game">7</Type>
+</Types>

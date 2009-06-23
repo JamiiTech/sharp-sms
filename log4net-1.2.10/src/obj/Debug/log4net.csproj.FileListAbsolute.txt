@@ -1,0 +1,12 @@
+C:\Users\denis\Documents\Visual Studio 2008\Projects\x\log4net-1.2.10\build\bin\net\1.0\debug\log4net.dll
+C:\Users\denis\Documents\Visual Studio 2008\Projects\x\log4net-1.2.10\build\bin\net\1.0\debug\log4net.pdb
+C:\Users\denis\Documents\Visual Studio 2008\Projects\x\log4net-1.2.10\build\bin\net\1.0\debug\log4net.xml
+C:\Users\denis\Documents\Visual Studio 2008\Projects\x\log4net-1.2.10\src\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\denis\Documents\Visual Studio 2008\Projects\x\log4net-1.2.10\src\obj\Debug\log4net.dll
+C:\Users\denis\Documents\Visual Studio 2008\Projects\x\log4net-1.2.10\src\obj\Debug\log4net.pdb
+E:\i-rai\x\log4net-1.2.10\build\bin\net\1.0\debug\log4net.dll
+E:\i-rai\x\log4net-1.2.10\build\bin\net\1.0\debug\log4net.pdb
+E:\i-rai\x\log4net-1.2.10\build\bin\net\1.0\debug\log4net.xml
+E:\i-rai\x\log4net-1.2.10\src\obj\Debug\ResolveAssemblyReference.cache
+E:\i-rai\x\log4net-1.2.10\src\obj\Debug\log4net.dll
+E:\i-rai\x\log4net-1.2.10\src\obj\Debug\log4net.pdb

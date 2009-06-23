@@ -1,0 +1,6 @@
+D:\i-rai\x\build\bin\net\1.0\debug\log4net.dll
+D:\i-rai\x\build\bin\net\1.0\debug\log4net.pdb
+D:\i-rai\x\build\bin\net\1.0\debug\log4net.xml
+D:\i-rai\x\log4net-1.2.10\obj\Debug\ResolveAssemblyReference.cache
+D:\i-rai\x\log4net-1.2.10\obj\Debug\log4net.dll
+D:\i-rai\x\log4net-1.2.10\obj\Debug\log4net.pdb
